@@ -6,36 +6,106 @@ body {
   flex-direction: column;
 }
 
+@mixin list {
+  & ul {
+    display: flex;
+    flex-direction: column;
+    width: 228px;
+    height: 246px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+    padding: 0;
+    & li {
+      height: 25%;
+      list-style: none;
+      line-height: 60px;
+      text-align: left;
+      padding-left: 35%;
+      border: 1px solid white;
+      &:hover {
+        border: 1px solid blue;
+      }
+    }
+  }
+}
+
 .main {
   width: 100%;
   display: flex;
   justify-content: space-around;
   & .instruments {
-    width: 40%;
+    width: 25%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    @include list;
     & ul {
-      display: flex;
-      flex-direction: column;
-      width: 228px;
-      height: 246px;
-      padding: 0;
       & li {
-        width: 100%;
-        height: 25%;
-        list-style: none;
+        position: relative;
+      }
+      & [id="paint"] {
+        background-image: url("assets/paint.png");
+        background-repeat: no-repeat;
+        background-position: 10%;
+      }
+      & .separator {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        height: 0;
+        width: 64%;
+      }
+      & [id="choose"] {
+        background-image: url("assets/chooose.png");
+        background-repeat: no-repeat;
+        background-position: 10%;
+      }
+      & [id="move"] {
+        background-image: url("assets/move.png");
+        background-repeat: no-repeat;
+        background-position: 10%;
+      }
+      & [id="transform"] {
+        background-image: url("assets/transform.png");
+        background-repeat: no-repeat;
+        background-position: 10%;
+      }
+      & [id="current"] .circle {
+        background-color: #C4C4C4;
+      }
+      & [id="prev"] .circle {
+        background-color: #41F795;
+      }
+      & [id="color1"] .circle {
+        background-color: red;
+      }
+      & [id="color2"] .circle {
+        background-color: blue;
+      }
+      & .circle {
+        width: 24px;
+        height: 24px;
+        border: 2px solid #000000;
+        border-radius: 50%;
+        position: absolute;
+        left: 10%;
+        top: 30%;
       }
     }
 
   }
 
+  & .switcher {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include list;
+  }
 }
 
 #piskel {
-  width: 60%;
+  width: 40%;
   height: auto;
   max-width: 512px;
-  background: aqua;
+  max-height: 512px;
 }
 
 .header {
