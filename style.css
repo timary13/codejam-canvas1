@@ -6,12 +6,54 @@ body {
   flex-direction: column; }
 
 .main {
-  width: 40%; }
+  width: 100%;
+  display: flex;
+  justify-content: space-around; }
+  .main .instruments {
+    width: 40%;
+    display: flex;
+    flex-direction: column; }
+    .main .instruments ul {
+      display: flex;
+      flex-direction: column;
+      width: 228px;
+      height: 246px;
+      padding: 0; }
+      .main .instruments ul li {
+        width: 100%;
+        height: 25%;
+        list-style: none; }
 
 #piskel {
-  width: 100%;
+  width: 60%;
   height: auto;
   max-width: 512px;
   background: aqua; }
+
+.header {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+  margin-bottom: 5%; }
+  .header-nav {
+    width: 5%;
+    background-image: url("assets/nav.png");
+    background-repeat: no-repeat; }
+  .header-name {
+    width: 18%; }
+    .header-name p {
+      font-family: Roboto;
+      font-style: normal;
+      margin: 0;
+      font-size: 20px;
+      line-height: 48px;
+      color: rgba(0, 0, 0, 0.87); }
+  .header-menu {
+    width: 77%;
+    background-image: url("assets/menu.png");
+    background-repeat: no-repeat;
+    background-position: 98%; }
 
 /*# sourceMappingURL=style.css.map */
